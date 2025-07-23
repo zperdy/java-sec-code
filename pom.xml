@@ -379,7 +379,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-expression</artifactId>
-            <version>4.3.16.RELEASE</version>
+            <version>5.3.39</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
