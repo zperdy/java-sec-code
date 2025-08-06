@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
-
 import javax.script.Bindings;
 import javax.script.ScriptContext;
 import javax.script.ScriptEngine;
@@ -114,11 +114,14 @@ public class Rce {
     }
 
     @GetMapping("/sec/yarm")
-    public void secYarm(String content) {
-        Yaml y = new Yaml(new SafeConstructor());
-        y.load(content);
-    }
 
+        public void secYarm(String content) {
+
+            Yaml y = new Yaml(new SafeConstructor(new LoaderOptions()));
+
+            y.load(content);
+
+        }
     /**
      * http://localhost:8080/rce/groovy?content="open -a Calculator".execute()
      * @param content groovy shell
