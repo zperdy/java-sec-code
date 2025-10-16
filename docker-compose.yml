@@ -13,5 +13,3 @@ services:
         image: joychou/jsc_mysql:latest
         ports:
             - "3306:3306"
-- name: Checkmarx One++ GitHub Action
-  uses: checkmarx-ts/cxone-plusplus-github-action@v2
